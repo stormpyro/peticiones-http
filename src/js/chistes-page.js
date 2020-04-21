@@ -54,9 +54,12 @@ const eventos = () => {
 	});
 };
 
-const dibujarChiste = (chiste) => {
+const dibujarChiste = ({ icon_url, id, value }) => {
 	const olItem = document.createElement("li");
-	olItem.innerHTML = `${contador}. <b>${chiste.id}</b>: ${chiste.value}`;
+	olItem.innerHTML = `<img src="${icon_url}"><span>${contador}.</span> <b>${id.slice(
+		16,
+		id.length - 1
+	)}</b>: ${value}`;
 	olItem.classList.add("list-group-item");
 	olList.append(olItem);
 };
